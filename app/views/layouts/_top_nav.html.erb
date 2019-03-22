@@ -28,9 +28,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
-        <% if @current_user %>
-          <li><p class="navbar-text">Signed in as <%= @current_user.name %></p></li>
-          <li><%= link_to "Logout", session_path(@current_user), method: :delete %></li>
+        <% if current_user %>
+          <li><p class="navbar-text">Signed in as <%= current_user.first_name %></p></li>
+          <li><%= link_to "Logout", session_path(current_user), method: :delete %></li>
         <% else %>
           <li><%= link_to 'Login', '/sessions/new' %></li>
           <li><%= link_to 'Signup', '/users/new' %></li>

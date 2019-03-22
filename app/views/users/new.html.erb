@@ -1,6 +1,6 @@
 <h1>Signup!</h1>
 
-<%= form_for @user, url: 'users' do |f| %>
+<%= form_for @user do |f| %>
 
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -16,7 +16,7 @@
   <% end %>
 
   first_name: <%= f.text_field :first_name %>
-  last_name: <%= f.text_field :first_name %>
+  last_name: <%= f.text_field :last_name %>
   email: <%= f.text_field :email %>
   password_digest: <%= f.password_field :password %>
   <%= f.submit "Submit" %>
