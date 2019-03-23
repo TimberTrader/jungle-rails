@@ -2,12 +2,8 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :product
 
-  validates :description
-  validates :rating,
-  presence: true,
-  numericality: true,
-  :inclusion => { :in => 1..5 }
-validates :user_id, presence: true
-validates :product_id, presence: true
+  validates :description, :rating, :user_id, :product_id, presence: true
+  validates :rating, :user_id, :product_id, numericality: true
+  validates :rating, :inclusion => { :in => 1..5 }
 
 end
