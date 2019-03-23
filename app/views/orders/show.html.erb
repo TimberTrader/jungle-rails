@@ -8,6 +8,50 @@
     <h4>Thank you for your order!</h4>
   </div>
 
+  <div class="panel panel-default products">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Quantity Ordered</th>
+          <th>Extended Price</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @order_items = @order.line_items %>
+        <% @order_items.each do | order_item | %>
+          <tr>
+            <td>
+              <%= image_tag order_item.product.image.tiny %>
+            </td>
+            <td>
+              <h4><%= order_item.product.name %></h4>
+              <br>
+              <p><%= order_item.product.description %></p>
+            </td>
+            <td>
+              <%= order_item.quantity%>
+            </td>
+            <td>
+              <%= order_item.total_price %>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+          <td colspan=3> Total: </td>
+          <td><%= @order.total_cents %></td>
+        </tr>
+        <tr>
+          <td colspan=4> This order confirmation has been sent to:
+            <%= @order.email %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
