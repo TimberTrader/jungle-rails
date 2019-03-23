@@ -1,13 +1,13 @@
 Rails.application.configure do
   
-  #ethereal mail tester
+  #ethereal mail tester (for user Oswald Chriastiansen)
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :address              => 'smtp.ethereal.email',
       :port                 => 587,
       :domain               => 'ethereal.email',
-      :user_name            => 'kristofer42@ethereal.email',
-      :password             => '6bNhgvZHstnwfyX361',
+      :user_name            => 'oswald.christiansen@ethereal.email',
+      :password             => 'tEdtNDq2TffNMRnPDC',
       :authentication => 'plain',
       :enable_starttls_auto => true
 }
