@@ -6,8 +6,11 @@ class ReviewsController < ApplicationController
 
   def create
     review = current_user.reviews.create(review_params)
-    review.save
-    redirect_to :back
+    if review.save
+      redirect_to :back
+    else
+      render :back
+    end
   end
 
   private
