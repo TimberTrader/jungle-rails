@@ -25,24 +25,33 @@
         </dl>
       </div>
     </div>
-    <div class="row">  
-    <div class="row">
     <div class="col-sm-12">
       <h2>Reviews</h2>
-      <% @product.reviews.each do |review| %>
+        <div class="col-sm-12">
+          <%= form_for([@product, Review.new]) do |f| %>
+            <dl class="dl-horizontal">
+              <dt><%= label_tag(:rating, "Rating") %></dt>
+              <dd><%= f.select :rating, 0..5 %></dd>
+              <dt><%= label_tag(:description, "Description") %></dt>
+              <dd><%= f.text_area :description, :required => true %></dd>
+              <dt>Submit Review</dt>
+              <dd><%= f.submit "Submit" %></dd>
+            </dl>
+          <% end %>
+        </div>
+      <% @product.reviews.order(id: :desc).each do |review| %>
         <dl class="dl-horizontal">
-          <dt>Rating</dt>
-          <dd><%= review.rating %></dd>
-          <dt>User</dt>
-          <dd><%= review.user.first_name %></dd>
-          <dt>Description</dt>
-          <dd><%= review.description %></dd>
+        <dt>Rating</dt>
+        <dd><%= review.rating %></dd>
+        <dt>User</dt>
+        <dd><%= review.user.first_name %></dd>
+        <dt>Description</dt>
+        <dd><%= review.description %></dd>
         </dl>
-      <% end %>
-    </div>
-  </div>
-    </div>
-  </article>
-
-
+        <% end %>
+        </div>
+        </div>
+        </div>
+        </article>
+        
 </section>
