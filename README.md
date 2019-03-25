@@ -2,7 +2,7 @@
 
 This represents my fourth project (third solo project) for the LhL Web Dev Bootcamp (Winter 2019).
 
-Within the one week provided by LhL’s curriculum I was able to add new features and fix identified bugs to an existing code base in a language (Ruby) and framework (Rails) where I had no previous experience
+Within the one week provided by LhL’s curriculum I was able to add new features and fix identified bugs to an existing code base in a language (Ruby) and framework (Rails) where I had no previous experience.
 
 ### The App
 Jungle On Rails simulates an on-line retail application which would allow shoppers:
