@@ -15,10 +15,11 @@
     </div>
   <% end %>
 
-  first_name: <%= f.text_field :first_name %>
-  last_name: <%= f.text_field :last_name %>
+  first name: <%= f.text_field :first_name %>
+  last name: <%= f.text_field :last_name %>
   email: <%= f.text_field :email %>
-  password_digest: <%= f.password_field :password %>
+  password: <%= f.password_field :password %>
+  password confirmation: <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>
   
 <% end %>
