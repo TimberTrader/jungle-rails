@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "AddToCarts", type: :feature do
+  
   # SETUP
   before :each do
     @category = Category.create! name: 'Apparel'
@@ -19,12 +20,12 @@ RSpec.feature "AddToCarts", type: :feature do
   scenario "clicking AddToCart increments counter in cart" do
     # ACT
     visit root_path
-    cart_link = find(".navbar a[href='#{cart_path}']")
+    cart_link = find(".navbar link_to=#{cart_path}']")
     expect(cart_link).to have_content("My Cart (0)")
-    within('.products .product:last-child') { click_link('Add') }
+    within('.product .product.actions') { click_link('Add') }
     
     #VERIFY
-    cart_link = find(".navbar a[href='#{cart_path}']")
+    cart_link = find(".navbar link_to='#{cart_path}']")
     expect(cart_link).to have_content("My Cart (1)")
 
     end
